@@ -5,12 +5,11 @@
 # name: 50_dell_BIOS_T9YX9_LN_2.9.1.BIN
 # timeout: 300
 # script_type: commissioning
-# for_hardware: system_product:"PowerEdge R730xd (SKU=NotProvided;ModelName=PowerEdge R730xd)"
+# packages:
+#   url: https://downloads.dell.com/FOLDER05355228M/1/BIOS_T9YX9_LN_2.9.1.BIN
+# for_hardware: system_product:PowerEdge R730xd (SKU=NotProvided;ModelName=PowerEdge R730xd)
 # tags: update_firmware
 # may_reboot: True
 # --- End MAAS 1.0 script metadata ---
-
-wget -O FIRMWARE.BIN https://downloads.dell.com/FOLDER05355228M/1/BIOS_T9YX9_LN_2.9.1.BIN
-sudo bash FIRMWARE.BIN -qf || echo the firmware update exited with a non-zero code
-
-exit 0
+sh $DOWNLOAD_PATH/BIOS_T9YX9_LN_2.9.1.BIN -qf || echo the firmware update exited with a non-zero code
+reboot
