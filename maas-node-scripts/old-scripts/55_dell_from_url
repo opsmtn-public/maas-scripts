@@ -1,0 +1,19 @@
+#!/bin/bash -ex
+# --- Start MAAS 1.0 script metadata ---
+# title: Dell Firmware update BIOS_T9YX9_LN_2.9.1.BIN
+# description: Apply a Dell DUP firmware update
+# name: 55_dell_from_url
+# timeout: 300
+# packages:
+#  url: https://downloads.dell.com/FOLDER05355228M/1/BIOS_T9YX9_LN_2.9.1.BIN
+# script_type: commissioning
+# tags: update_firmware
+# may_reboot: True
+# --- End MAAS 1.0 script metadata ---
+
+#wget -O FIRMWARE.BIN https://downloads.dell.com/FOLDER05355228M/1/BIOS_T9YX9_LN_2.9.1.BIN
+#sudo bash FIRMWARE.BIN -qf
+
+echo $CWD
+find .
+exit 0
