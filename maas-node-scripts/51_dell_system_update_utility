@@ -1,0 +1,18 @@
+#!/bin/bash -ex
+# --- Start MAAS 1.0 script metadata ---
+# title: Dell System Update Utility 
+# description: run the Dell System Update Utility in automated mode
+# name: 51_dell_system_update_utility
+# timeout: 3000
+# script_type: commissioning
+# tags: update_firmware
+# may_reboot: True
+# --- End MAAS 1.0 script metadata ---
+
+# This update is currently failing within the update process
+# debugging within the image is needed to run this image
+echo "Skipping..."
+#wget -O/var/tmp/suu.iso https://downloads.dell.com/FOLDER05400799M/1/SUU-LIN64_19.01.200.318.ISO
+#sudo mount -o loop /var/tmp/suu.iso /mnt
+#cd /mnt
+#sudo bash /mnt/suu -e -d /mnt
