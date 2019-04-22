@@ -11,8 +11,11 @@
 # tags: update_firmware
 # may_reboot: True
 # --- End MAAS 1.0 script metadata ---
-sh $DOWNLOAD_PATH/iDRAC-with-Lifecycle-Controller_Firmware_1HY5M_LN_2.61.60.60_A00.BIN -qf || echo the firmware update exited with a non-zero code
-if [ $? -eq 0 ]
-  then
-    reboot
-fi
+
+# This image is failing, it appears to have dependencies on CentOS
+echo "Skipping"
+#sh $DOWNLOAD_PATH/iDRAC-with-Lifecycle-Controller_Firmware_1HY5M_LN_2.61.60.60_A00.BIN -qf || echo the firmware update exited with a non-zero code
+#if [ $? -eq 0 ]
+#  then
+#    reboot
+#fi

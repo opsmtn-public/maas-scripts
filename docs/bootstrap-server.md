@@ -9,15 +9,17 @@ Use MAAS (http://maas.io) to take control of a server and perform these steps:
 
 ## Prerequisites
 * Maas region controller and rack controller have been installed and are running on the same server.   We refer to this server as `jumpbox1`. <https://maas.io/install>
-* the git repo is checked-out onto jumpbox1.  We refer to this path as <maas-scripts>
-* You have access to reach http://jumpbox1:5240.  This can be direct access or via an ssh port forward.
+* the git repo is checked-out onto `jumpbox1`.  We refer to this path as <maas-scripts>
+* You have access to reach <http://jumpbox1:5240>.  This can be direct access or via an ssh port forward.
 * You have login credentials to MAAS
 * Server to bootstrap is configured to boot via PXE via a connected NIC
 * DHCP is forwarded from server's VLAN to `jumpbox1`'s network.
 
 ## Procedure
 
-### 1. Use the MAAS web GUI to commission machine(s) 
+### 1. Commission Machine
+
+#### Using the MAAS web GUI
 
 * access the MAAS web gui at http://<jumpbox1>:5240
 * select "machines"
@@ -28,12 +30,23 @@ Use MAAS (http://maas.io) to take control of a server and perform these steps:
 * select any `Hardware tests` you want to apply to this server
 * select "commission machine"
 
+#### Using the CLI
+* Make sure you are logged in: https://docs.maas.io/2.4/en/manage-cli#log-in-(required)
+To commission all nodes in the 'New' state:
+`maas admin machines accept-all`
 
-### 2. Maas will bootstrap the server(s)
+
+### Maas will bootstrap the server(s)
 * maas will use ipmi to boot the machine from the network.  
 * maas will serve an "ephemeral OS" to the server.  
 * the server will execute all tests and commissioning scripts within this ephemeral os.  
 * maas will collect details of the bootstrap process 
+* This may require multiple reboots to run all scripts and update firmwares
+
+### 3. Deploy Machine (optional)
+The next step that can be done is to Deploy an Operating System to the machine.
+https://docs.maas.io/2.4/en/nodes-deploy
+
 
 ## Scripts
 

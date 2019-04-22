@@ -4,8 +4,8 @@
 
 cd ~/maas-scripts/maas-node-scripts
 for F in *; do
-	echo maas opsmtn node-script delete script@=./$F
-	maas opsmtn node-script delete script@=./$F
-	echo maas opsmtn node-scripts create script@=./$F
-	maas opsmtn node-scripts create script@=./$F
+	echo maas admin node-script delete $F
+	maas admin node-script delete $F
+	echo maas admin node-scripts create script@=./$F
+	maas admin node-scripts create script@=./$F
 done

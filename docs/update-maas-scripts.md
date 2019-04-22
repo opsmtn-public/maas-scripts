@@ -32,7 +32,7 @@ The create script will fail to create any existing scripts and you may see error
 
 ### 4. Verify the scripts are stored within maas
 
-access the MAAS web gui at http://<jumpbox1>:5240
+access the MAAS web gui at <http://jumpbox1:5240>
 select "settings"
 select "user scripts"
 select a script to inspect

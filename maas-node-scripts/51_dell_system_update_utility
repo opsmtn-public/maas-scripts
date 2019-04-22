@@ -9,7 +9,10 @@
 # may_reboot: True
 # --- End MAAS 1.0 script metadata ---
 
-wget -O/var/tmp/suu.iso https://downloads.dell.com/FOLDER05400799M/1/SUU-LIN64_19.01.200.318.ISO
-sudo mount -o loop /var/tmp/suu.iso /mnt
-cd /mnt
-sudo bash /mnt/suu -e -d /mnt
+# This update is currently failing within the update process
+# debugging within the image is needed to run this image
+echo "Skipping..."
+#wget -O/var/tmp/suu.iso https://downloads.dell.com/FOLDER05400799M/1/SUU-LIN64_19.01.200.318.ISO
+#sudo mount -o loop /var/tmp/suu.iso /mnt
+#cd /mnt
+#sudo bash /mnt/suu -e -d /mnt
