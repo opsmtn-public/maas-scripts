@@ -5,6 +5,7 @@
 # name: 51_dell_system_update_utility
 # timeout: 3000
 # script_type: commissioning
+# for_hardware: system_product:PowerEdge R730xd (SKU=NotProvided;ModelName=PowerEdge R730xd)
 # tags: update_firmware
 # may_reboot: True
 # --- End MAAS 1.0 script metadata ---
